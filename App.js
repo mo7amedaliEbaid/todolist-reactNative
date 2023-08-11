@@ -9,13 +9,13 @@ export default function App() {
     const handleAddTask = () => {
         Keyboard.dismiss();
         setTaskItems([...taskItems, task])
-        setTask(null);
+       setTask(null);
     }
 
     const completeTask = (index) => {
         let itemsCopy = [...taskItems];
         itemsCopy.splice(index, 1);
-        setTaskItems(itemsCopy);
+       setTaskItems(itemsCopy);
     }
     return (
         <View style={styles.container}>
@@ -27,8 +27,10 @@ export default function App() {
                     {
                         taskItems.map((item, index) => {
                             return (
-                                <TouchableOpacity key={index} onPress={() => completeTask(index)}> <Text text={item} />  </TouchableOpacity>
-                            )
+                              <TouchableOpacity key={index} onPress={() => completeTask(index)}> 
+                              <Task text={item} />  
+                              </TouchableOpacity>
+                           )
                         })
                     }
 
